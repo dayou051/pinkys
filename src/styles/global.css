@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.bg-orange-10 {
+    background-color: #FFF7F2;
+}
+
+.bg-orange-20 {
+    background: #FFEFE5;
+}
+
+.bg-orange-30 {
+    background: #FFD5CA;
+}
+
+.bg-pink-40 {
+    background: #E7357B;
+}
+.bg-pink-50 {
+    background: #D71F67;
+}
+
+.text-orange-10 {
+    color: #FFF7F2;
+}
+
+.text-orange-20 {
+    color: #FFEFE5;
+}
+
+.text-orange-30 {
+    color: #FFD5CA;
+}
+
+.text-pink-40 {
+    color: #E7357B;
+}
+.text-pink-50 {
+    color: #D71F67;
+}

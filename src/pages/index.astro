@@ -1,0 +1,40 @@
+---
+import FAQ from '../components/common/FaqCollapse';
+import ImageGallery from '../components/common/ImageGallery';
+import ContactForm from '../components/form/ContactForm.astro';
+import Services from '../components/ui/Services.astro';
+import Slider from '../components/ui/Slider.astro';
+import Testimonials from '../components/ui/Testimonials.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<main class="flex flex-col items-center">
+        <section class="w-full bg-[#FFEFE5]">
+            <Slider client:load />
+        </section>
+        <section class="w-full text-center py-14 px-5">
+            <h2 class="text-4xl font-bold mb-8 text-pink-40">¿Qué hacemos por ti?</h2>
+            <Services client:load />
+        </section>
+        <section class="w-2xl mx-auto text-center py-14 ">
+            <h2 class="text-4xl font-bold mb-8 text-pink-40">Historias en imágenes</h2>
+            <ImageGallery client:load />
+        </section>
+        
+        <section class="w-2xl mx-auto text-center py-14" id="exr">
+            <h2 class="text-4xl font-bold mb-8 text-pink-40">Experiencias Reales</h2>
+            <Testimonials client:load />
+        </section>
+    
+        <section class="w-full bg-[#FFEFE5] text-center py-14 md:px-44 lg:p-5">
+            <h2 class="text-4xl font-bold mb-8 text-pink-40">Hablemos Juntos</h2>
+            <ContactForm />
+        </section>
+    
+        <section class="w-full text-center py-14 p-5 md:px-44 lg:p-5 lg:w-2xl" id="faqs">
+            <h2 class="text-4xl font-bold mb-8 text-pink-40">Preguntas Frecuentes</h2>
+            <FAQ client:load />
+        </section>
+    </main>
+</Layout>

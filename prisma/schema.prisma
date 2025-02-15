@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          Int        @id @default(autoincrement())
+  productCode String
+  name        String
+  description String?
+  category    String
+  price       Decimal
+  createdAt   DateTime   @default(now())
+
+  SaleItem SaleItem[]
+}
+
+model Customer {
+  id               Int    @id @default(autoincrement())
+  name             String
+  lastname         String
+  phoneNumber      String
+  location         String
+  deliveryAddress  String
+  addressReference String
+  sales            Sale[]
+}
+
+model Sale {
+  id          Int        @id @default(autoincrement())
+  totalAmount Decimal
+  createdAt   DateTime   @default(now())
+  customerId  Int
+  customer    Customer   @relation(fields: [customerId], references: [id])
+  saleItems   SaleItem[]
+
+  Shipping Shipping?
+  Payment Payment?
+}
+
+model SaleItem {
+  id       Int     @id @default(autoincrement())
+  saleId   Int
+  name     String
+  quantity Int
+  price    Decimal
+
+  product  Product @relation(fields: [id], references: [id])
+  sale     Sale    @relation(fields: [saleId], references: [id])
+}
+
+model Shipping {
+  id         Int    @id @default(autoincrement())
+  saleId     Int    @unique
+  sale       Sale   @relation(fields: [saleId], references: [id])
+  status     String @default("Pendiente") // Estados: Pendiente, En camino, Entregado
+  address    String
+  createdAt  DateTime @default(now())
+}
+
+model Payment {
+  id         Int    @id @default(autoincrement())
+  saleId     Int    @unique
+  sale       Sale   @relation(fields: [saleId], references: [id])
+  amount     Decimal
+  method     String // Tarjeta, Efectivo, Transferencia
+  status     String @default("Pendiente") // Pendiente, Pagado, Rechazado
+  createdAt  DateTime @default(now())
+}

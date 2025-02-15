@@ -1,0 +1,31 @@
+---
+import Footer from "../components/ui/Footer.astro";
+import Header from "../components/ui/Header.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/logo-pk.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Pinky's Detalles y mucho más</title>
+	</head>
+	<body class="bg-[#FFF7F2]">
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+
+	html,
+	body {
+		font-family: "Sofia Sans", sans-serif;
+		scroll-behavior: smooth;
+	}
+</style>

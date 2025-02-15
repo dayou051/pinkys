@@ -1,0 +1,34 @@
+---
+import Testimonialsf from "../common/Testimonials";
+
+import { motion } from "framer-motion";
+import TestimonialCard from "../common/TestimonialCard";
+
+const reviews = [
+  { cliente: "Karina Sánchez Gúzman", comentario: "Excelente servicio.", calificacion: "⭐⭐⭐⭐⭐" },
+  { cliente: "Juan Pérez", comentario: "Muy recomendable.", calificacion: "⭐⭐⭐⭐⭐" },
+  { cliente: "Ana López", comentario: "Buen trato y calidad.", calificacion: "⭐⭐⭐⭐⭐" },
+  { cliente: "Luis Martínez", comentario: "Volveré a usarlo.", calificacion: "⭐⭐⭐⭐⭐" },
+  { cliente: "María Fernández", comentario: "Súper fácil y rápido.", calificacion: "⭐⭐⭐⭐⭐" },
+];
+
+const duplicatedReviews = [...reviews, ...reviews];
+
+---
+
+<div class="overflow-hidden p-5">
+  <motion.div client:load
+    className="flex w-full gap-3"
+    animate={{ x: ["-20%", "-120%"] }}
+    transition={{ duration: 40, ease: "linear", repeat: Infinity}} 
+  >
+    {duplicatedReviews.map((review, index) => (
+      <TestimonialCard
+        key={index}
+        cliente={review.cliente}
+        comentario={review.comentario}
+        calificacion={review.calificacion}
+      />
+    ))}
+  </motion.div>
+</div>

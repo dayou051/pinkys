@@ -1,0 +1,27 @@
+---
+import Button, { TypeButton } from "../common/Button";
+import Input, { TypeInput } from "../common/Input";
+---
+
+<div class="flex flex-col lg:flex-row lg:mx-auto bg-orange-50 shadow-[0_4px_4px_0px_#FFD5CA] p-4 gap-7 lg:w-3xl m-5">
+    <div class="bg-pink-40 text-orange-50 p-5">
+        <h2 class="text-2xl font-bold mb-6">Información de Contacto</h2>
+        <p class="mb-6">Coloca esta sección al inicio o después de la introducción para generar confianza</p>
+        <p><strong>contacto@pinkys.com</strong></p>
+    </div>
+    <form class="flex flex-col w-full">
+        <div class="mb-4">
+            <Input label="Nombre Completo" type={TypeInput.NORMAL} placeholder="Eduardo Alayo Vargas" client:load />
+        </div>
+        <div class="mb-4">
+            <Input label="Correo Electrónico" type={TypeInput.EMAIL} placeholder="example@demo.com" client:load />
+        </div>
+        <div class="mb-4">
+            <Input label="Asunto" type={TypeInput.NORMAL} placeholder="Información Adicional" client:load />
+        </div>
+        <div class="mb-4">
+            <Input label="Mensaje" type={TypeInput.TEXTAREA} placeholder="Escribe aquí tu mensaje" client:load />
+        </div>
+        <Button type={TypeButton.SECUNDARY}>Enviar Mensaje</Button>
+    </form>
+</div>
