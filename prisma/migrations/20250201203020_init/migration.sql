@@ -44,7 +44,7 @@ CREATE TABLE "SaleItem" (
 CREATE TABLE "Shipping" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "saleId" INTEGER NOT NULL,
-    "status" TEXT NOT NULL DEFAULT 'Pendiente',
+    "status" TEXT NOT NULL DEFAULT "Pendiente",
     "address" TEXT NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT "Shipping_saleId_fkey" FOREIGN KEY ("saleId") REFERENCES "Sale" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
@@ -56,7 +56,7 @@ CREATE TABLE "Payment" (
     "saleId" INTEGER NOT NULL,
     "amount" DECIMAL NOT NULL,
     "method" TEXT NOT NULL,
-    "status" TEXT NOT NULL DEFAULT 'Pendiente',
+    "status" TEXT NOT NULL DEFAULT "Pendiente",
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT "Payment_saleId_fkey" FOREIGN KEY ("saleId") REFERENCES "Sale" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
