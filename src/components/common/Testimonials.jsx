@@ -3,7 +3,7 @@ import TestimonialCard from "./TestimonialCard";
 
 const reviews = [
   { cliente: "Karina Sánchez Gúzman", comentario: "Excelente servicio.", calificacion: "⭐⭐⭐⭐⭐" },
-  { cliente: "Juan Pérez", comentario: "Muy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendableMuy recomendable.", calificacion: "⭐⭐⭐⭐⭐" },
+  { cliente: "Juan Pérez", comentario: "Muy recomendable", calificacion: "⭐⭐⭐⭐⭐" },
   { cliente: "Ana López", comentario: "Buen trato y calidad.", calificacion: "⭐⭐⭐⭐⭐" },
   { cliente: "Luis Martínez", comentario: "Volveré a usarlo.", calificacion: "⭐⭐⭐⭐⭐" },
   { cliente: "María Fernández", comentario: "Súper fácil y rápido.", calificacion: "⭐⭐⭐⭐⭐" },
